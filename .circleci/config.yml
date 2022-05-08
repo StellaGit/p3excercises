@@ -33,7 +33,23 @@ jobs:
       # - run: return 1
       #- destroy_environment
 
-
+  # Exercise: Config and Deployment
+  configure_infrastructure: 
+    docker:
+      - image: python:3.7-alpine3.11
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints: ["9d:9c:c9:d9:92:02:99:e2:99:07:37:74:23:15:f3:e6"] # You can get this ID in the section where you registered the SSH Key
+      - run:
+          name: Install dependencies
+          command: |
+            # install the dependencies needed for your playbook
+            apk add --update ansible 
+      - run:
+          name: Configure server
+          command: |
+            ansible-playbook -i inventory main-remote.yml
 
 
 
