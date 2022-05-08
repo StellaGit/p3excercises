@@ -40,7 +40,7 @@ jobs:
     steps:
       - checkout
       - add_ssh_keys:
-          fingerprints: ["9d:9c:c9:d9:92:02:99:e2:99:07:37:74:23:15:f3:e6"] # You can get this ID in the section where you registered the SSH Key
+          fingerprints: ["35:4b:d3:f3:02:12:ce:17:b8:8c:2b:d2:98:d4:04:af"] # You can get this ID in the section where you registered the SSH Key
       - run:
           name: Install dependencies
           command: |
@@ -64,7 +64,7 @@ workflows:
       #- download_file:
       #    requires:
       #      - upload_file
-      - create_infrastructure
+      #- create_infrastructure
       - configure_infrastructure
       #- create_and_deploy_front_end
       #- promote_to_production:
